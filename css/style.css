@@ -1,0 +1,903 @@
+@import url(common.css);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/* section 내부 <h4>태그는 모두 동일한 스타일 적용 */
+/* section 내부 <h5>태그는 모두 각 content의 소제목 */
+/* 각 content마다 margin-top: 100px */
+
+/* ---------애니메이션--------- */
+
+
+@keyframes art_box1{
+  0%{transform: translateY(0);}
+  100%{transform: translateY(10px);}
+}
+@keyframes art_box2{
+  0%{transform: translateY(0);}
+  100%{transform: translateY(-10px);}
+}
+@keyframes art_box3{
+  0%{transform: translateY(0);}
+  100%{transform: translateY(10px);}
+}
+@keyframes art_box4{
+  0%{transform: translateY(0);}
+  100%{transform: translateY(-10px);}
+}
+@keyframes art_box5{
+  0%{transform: translateY(0);}
+  100%{transform: translateY(10px);}  
+}
+@keyframes his_ball_ani{
+  0%{transform: translateX(0);}
+  100%{transform: translateX(440px);}
+}
+@keyframes con2_span{
+  0%{color: white;}
+  100%{color: #F5FF00;}
+}
+@keyframes line1{
+  0%{transform: translateX(0);}
+  100%{transform: translateX(50%);}
+}
+@keyframes ar1{
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+@keyframes ar2{
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+@keyframes ar3{
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+@keyframes line2{
+  0%{transform: translateX(0);}
+  100%{transform: translateX(-10%);}
+}
+@keyframes move{
+  0%{transform: translateX(-800px);}
+  100%{transform: translateX(0);}
+}
+@keyframes CD{
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(360deg);}
+}
+
+/* ------스크롤바 커스텀------- */
+
+*{scroll-behavior: smooth;}
+html::-webkit-scrollbar{
+  width: 10px;
+}
+html::-webkit-scrollbar-track{
+  background-color: #111;
+}
+html::-webkit-scrollbar-thumb{
+  background-color: #F5FF00;
+  border-radius: 10px;
+}
+
+/* ------공통 스타일 사항-------- */
+
+body{
+  font-family: 'Noto Sans KR', sans-serif; 
+  background-color: #222;
+}
+
+h2{
+  font-size: 52px;
+}
+
+/* -------헤더------ */
+
+header{
+  margin: auto;
+  width: 100%;
+  height: 100px;
+}
+
+nav{
+  width: 1400px;
+  height: inherit;
+  margin: auto;
+}
+
+.logo{
+  float: left;
+  width: 150px;
+}
+
+.nav_in{width: 1400px;}
+
+.gnb{
+  margin-top: 29px;
+  margin-right: 280px ;
+  float: right;
+  color: white;
+}
+
+.gnb ul{
+  display: flex;
+  justify-content: center;
+}
+
+.gnb ul li{
+  position: relative;
+  margin-left: 70px;
+  font-size: 24px;
+  transition: 0.35s;
+}
+
+.gnb ul li:hover{ color: #F5FF00;}
+
+.gnb ul li:before{
+  content:'';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  height: 2px;
+  background-color: #F5FF00;
+  transform: translateX(-50%);
+  transition: 0.35s;
+}
+
+.gnb ul li:hover:before{
+  width: 100%;
+  bottom: 0 ;
+}
+
+.logo img{
+  width: 150px;
+  margin-top: 29px;
+}
+
+.utilMenu span{
+  float: right;
+  color: white;
+  font-size: 30px;
+  margin-top: -32px;
+  margin-left: 250px;
+  
+}
+
+.utilMenu span:hover{ color: #F5FF00;}
+
+/* -------메인------ */
+
+main{
+  background: url(../image/image_1.png) no-repeat center center fixed;
+  background-size: cover ;
+  width: 100%;
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: main 10s alternate infinite;
+  transition: 0.5s;
+  position: relative;
+}
+main:before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 700px;
+  background: linear-gradient(to right bottom, black, transparent) ;
+}
+
+.main_in{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1400px;
+  height: 700px;
+}
+
+
+main:hover{
+  background: url(../image/main_2.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+main:hover h1{
+  width: 1400px;
+  height: 80px;
+  background-color: #F5FF00 ;
+  color: #111;
+  text-align: center;
+}
+
+main h1{
+  position: relative;
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
+  width: 300px;
+  height: 300px;
+  font-size: 68px;
+  font-weight: 700;
+  line-height: 72px;
+  text-align: left;
+  letter-spacing: 20px;
+  transition: 0.55s;
+}
+
+/* -------섹션------ */
+
+section{
+  width: 1400px;
+  text-align: center;
+  margin: auto;
+  color: black;
+}
+
+section h2 span{color: #F5FF00;}
+
+article{
+  width: 1400px;
+  margin-top: 100px;
+  color: white;
+  font-weight: 100;
+}
+
+/* -------content1------ */
+/* --------사옥이미지 및 회사 소갯말---------- */
+.content1{
+  overflow: hidden;
+}
+
+.content1_in1{
+  display: flex;
+  justify-content: space-between;
+}
+
+.companyImg img{
+  width: 700px;
+  float: left;
+}
+
+.companyT1{
+  width: 300px;
+  margin-right: 150px;
+  margin-top: 60px;
+}
+
+.companyT1 h3{
+  font-size: 45px;
+  margin-bottom: 30px;
+}
+
+.companyT1 p{font-size: 20px;}
+
+.content_in2{margin-top: 200px;}
+
+/* ---------방시혁 의장 소개--------- */
+
+.con2_img img{border-radius: 0 50px 0 50px;}
+
+.content_in2_text{
+  width: inherit;
+  height: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name{ /* 방시혁 이름 및 SNS */
+  margin-left: 200px;
+  margin-top: 50px;
+}
+
+.name h6{font-size: 70px;}
+
+.name p{font-size: 30px;}
+
+.snsList{   /* SNS 아이콘 */
+  display: flex;
+  margin: 20px;
+}
+
+.snsList li{ 
+  font-size: 40px;
+  margin: 20px;
+  transition: 1s;
+}
+
+.snsList li:hover{
+  color: #F5FF00;
+  transform: rotateY(360deg)
+}
+
+.bangs_history{
+  margin-top: 50px;
+  margin-right: 100px;
+  line-height: 35px;
+  border-left: 1px solid #F5FF00;
+  padding-left: 120px;
+}
+
+.bangs_history li{
+  font-size: 17px;
+  color: white;
+  transition: 0.35s;
+}
+
+.bangs_history li:hover{color: #F5FF00;}
+
+/* ----------content2 BUSINESS------------- */
+
+.content2{
+  position: relative;
+  width: inherit;
+  height: 700px;
+  margin-top: 300px;
+  border-radius: 50px;
+}
+
+.con2_text{
+  position: relative;
+  display: flex;
+  animation: con2_text_ani 5s alternate infinite;
+}
+
+.ss{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #F5FF00;
+  animation: his_ball_ani 3s alternate infinite;
+}
+
+.se{
+  width: 440px;
+  height: 2px;
+  transform: translateY(-10px);
+  background-color: #F5FF00;
+}
+
+.con2_title{
+  margin-top: 50px;
+  margin-left: 50px;
+  width: 800px;
+  text-align: left;
+  font-size: 40px;
+}
+
+.con2_title span{
+  color: white;
+  animation: con2_span 3s alternate infinite;
+}
+
+.moveLogo{
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+  overflow: hidden;
+}
+
+.moveLogo img{
+  width: 250px;
+  height: 70px;
+  margin: 50px;
+  animation: move 10s alternate ease infinite;
+}
+
+.con2_p{
+  margin-top: 500px;
+  width: 400px;
+}
+
+/* --------content3------- */
+
+.content3{
+  margin-top: 300px;
+  height: 1300px;
+  overflow: hidden;
+}
+
+.line1{
+  width: 2000px;
+  height: 40px;
+  background-color: #F5FF00;
+  transform: rotate(60deg);
+}
+
+.line1{
+  width: 2600px;
+  height: 40px;
+  background-color: #F5FF00;
+  transform: rotate(60deg);
+  color: #111;
+  line-height: 40px;
+  font-size: 24px;
+  letter-spacing: 30px;
+}
+
+.line1 h5{animation: line1 20s alternate forwards ease infinite;}
+
+.line2 h5{animation: line2 20s alternate forwards ease infinite;}
+
+
+.line2{
+  width: 2000px;
+  height: 40px;
+  transform: translateY(600px);
+  background-color: #F5FF00;
+  color: #111;
+  line-height: 40px;
+  font-size: 24px;
+  letter-spacing: 30px;
+}
+
+.art_box_in{
+  margin-top: 100px;
+  display: flex;
+  width: inherit;
+  height: 800px;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.art_box img[class=art_img]{
+  width: 250px;
+  height: 250px;
+  margin: 10px;
+  border-radius: 50%;
+  filter: brightness(30%);
+}
+
+.artBox{
+  transition: 0.35s;
+  height: 260px;
+  border-radius: 50%;
+}
+
+.art_logo{
+  width: 140px;
+  height: 50px;
+  border-radius: 0;
+  transform: translateY(-160px);
+  filter: brightness(100%);
+}
+
+.artBox:hover .art_img{
+  filter: brightness(100%);
+  box-shadow: 10px 10px #F5FF00;
+}
+
+.artBox:hover .art_logo{opacity: 0;}
+
+.art_box_in img{transition: 0.3s;}
+
+.info{
+  color: #111;
+  height: 20px;
+  transition: 0.35s;
+  background-color: white;
+  transform: translateY(-60px);
+  transform: scale(0);
+}
+
+.artBox .info h5{
+  font-size: 22px;
+  border-bottom: 1px solid #F5FF00;
+  padding: 15px;
+  margin: 20px;
+}
+
+.artBox .info p{
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.artBox:hover .info{
+  margin: 10px;
+  height: 400px;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #F5FF00;
+  border-radius: 40px;
+  transform: scale(1);
+}
+
+.info ul{font-size: 18px;}
+
+.info .art_more{
+  width: 200px;
+  height: 50px;
+  background-color: #F5FF00;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.MOREbtn_3{
+  margin-top: 100px;
+  width: 300px;
+  height: 70px;
+  font-size: 26px;
+  border-radius: 50px;
+  background-color: #F5FF00;
+  cursor: pointer;
+  transition: 0.35s;
+}
+
+.MOREbtn_3:hover{width: 350px;}
+
+.art_box1{animation: art_box1 3s alternate infinite;}
+.art_box2{animation: art_box2 3s alternate infinite;}
+.art_box3{animation: art_box3 3s alternate infinite;}
+.art_box4{animation: art_box4 3s alternate infinite;}
+.art_box5{animation: art_box5 3s alternate infinite;}
+
+
+
+/* ------------content4----------- */
+
+.content4{margin-top: 300px; width: inherit;}
+
+.con4_title{float: left; width: 400px;}
+.con4_title h3{
+  margin-top: 100px;
+  text-align: left;
+  font-size: 64px;
+  position: relative;
+}
+
+.con4_Title_pic{
+  width:800px;
+  float: right;
+  margin-top: 100px;
+  margin-right: 45px;
+  font-size: 26px;
+  height: 200px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.arrows{
+  display: flex;
+  flex-direction: column;
+  font-size: 50px;
+  margin-top: 20px;
+  margin-right: 100px;
+  color: #F5FF00;
+}
+.arrow1{
+  animation: ar1 0.5s alternate infinite;
+  animation-delay: 0.3s;
+}
+.arrow2{
+  animation: ar2 0.5s alternate infinite;
+  animation-delay: 0.6s;
+}
+.arrow3{
+  animation: ar3 0.5s alternate infinite;
+  animation-delay: 0.9s;
+}
+
+.allAlbum{margin-top: 500px;}
+
+.play1{color:#111;}
+
+.albumInfo{display: flex; margin-top: 50px;}
+
+.albumArt{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+  border-radius: 50px;
+  width: 300px;
+  height: 300px;
+  float: right;
+}
+
+.albumText{
+  margin-left: 50px;
+  width: 1000px;
+  height: 300px;
+  padding: 30px;
+  background-color: #444;
+  color: #111;
+  border-radius: 50px ;
+  box-sizing: border-box;
+  transition: 0.35s;
+}
+
+.albumText:hover{
+  transform: scale(1.05);
+  border: 1px solid #F5FF00;
+}
+
+.albumText h3{
+  font-size: 40px;
+  color: #F5FF00;
+  text-align: left;
+}
+
+.albumText h3 span{
+  font-size: 20px;
+  margin-left: 30px;
+}
+
+.album_Btn{
+ float: right;
+ margin-right: 15px;
+ cursor: pointer;
+ transition: 0.35s;
+}
+
+.album_Btn:hover{
+  transform: scale(1.1);
+}
+
+.albumText p{
+  font-weight: 200;
+  text-align: left;
+  color: #fff;
+  margin-top: 30px;
+}
+
+.CD{
+  animation: CD 5s forwards infinite linear;
+  width: 250px;
+  height: 250px;
+}
+
+.con4_text{
+  width: 400px;
+  margin-left: 50px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.con4_text h3{
+  font-size: 40px;
+  text-align: right;
+}
+
+.con4_text p{
+  text-align: left;
+  margin-top: 50px;
+}
+
+a .fa-chevron-circle-right{
+  font-size: 100px;
+  float: right;
+}
+
+/* ---------content5---------- */
+
+.content5{
+  margin-top: 100px;
+  width: inherit;
+}
+
+.news_pic{
+  margin-top: 200px;
+  width: 1400px;
+  height: 900px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  color: black;
+}
+
+.pic img{width: 600px;}
+
+.pic_1{
+  background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  color: #fff;
+  font-size: 30px;
+}
+
+.pic{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pic_2{
+  grid-column: 2 / 4;
+  grid-row: 1 / 3;
+  background: url(../image/NJS_news.jpg);
+  background-size: cover;
+  font-size: 80px;
+  font-weight: 600;
+  opacity: 0.5;
+  transition: 0.35s;
+}
+
+.pic_2 h6{
+  font-size: 26px;
+  color: white;
+}
+
+.pic_2:hover{opacity: 1;}
+
+.pic_3{
+  background: url(../image/txt_news.jpg);
+  background-size: cover;
+  grid-column: 1;
+  grid-row: 2 / 5;
+  opacity: 0.5;
+  transition: 0.35s;
+}
+
+.pic_3:hover{opacity: 1;}
+
+.pic_4{
+  background-color: bisque;
+  background: url(../image/le_news2.jpg);
+  background-size: cover;
+  grid-column: 3;
+  grid-row: 3;
+  opacity: 0.5;
+  transition: 0.35s;
+}
+
+.pic_4:hover{opacity: 1;}
+
+.pic_5{
+  background-color: chartreuse;
+  background: url(../image/sugar_news.gif);
+  background-size: cover;
+  grid-column: 2;
+  grid-row: 4;
+  opacity: 0.5;
+  transition: 0.35s;
+}
+
+.pic_5:hover{opacity: 1;}
+
+.pic_6{
+  background-color: #F5FF00;
+  grid-column: 2;
+  grid-row: 3;
+  color: #111;
+  font-size: 30px;
+}
+
+.pic_7{
+  background-color: #fef9d7;
+  grid-column: 3;
+  grid-row: 4;
+  font-size: 30px;
+  color: #111;
+}
+
+/* ------------content6 NEWS----------- */
+
+.content6{
+  width: inherit;
+  height: 1200px;
+  margin-top: 150px;
+}
+
+.NEWS{
+  display: flex;
+  justify-content: center;
+}
+
+.newsBox li{
+  background-color: #333;
+  color: #F5FF00;
+  padding: 20px;
+  width: 1000px;
+  margin: 20px;
+  border-radius: 20px;
+  transition: 0.35s;
+}
+
+.newsBox li:hover{
+  transform: scale(1.03);
+  border: 1px solid #F5FF00;
+}
+
+.newsBox li p{color: #fff;}
+
+/* --------------탑메뉴 */
+
+.TopMenu{
+  width: 100px;
+  height: 550px;
+  background-color: #111;
+  color: #F5FF00;
+  text-align: center;
+  position: fixed;
+  z-index: 1;
+  top: 30%;
+  left: 90%;
+  border-radius: 30px;
+  font-size: 24px;
+}
+
+.tMenu{
+
+}
+
+.tMenu h6{
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+.tMenu ul{
+  background-color: #333;
+  margin-top: 20px;
+  line-height: 70px;
+}
+
+.tMenu ul li{
+  transition: 0.35s;
+  width: 100px;
+  font-size: 24px;
+}
+
+.tMenu ul li:hover{
+  background-color: #fff;
+  color: #111;
+}
+
+.tMenu ul li a{
+  width: 100px;
+  display: inline-block;
+}
+
+.top{
+  margin-top: 15px;
+  font-size: 24px;
+  transition: 0.35s;
+}
+
+.top:hover{
+  transform: scale(1.1);
+  color: #fff;
+}
+
+/* ---------------Footer----------------- */
+
+footer{
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+  width: 100%;
+  height: 50px;
+  color: #F5FF00;
+}
+.newsBox{margin-top: 100px;}
+
+.newsBox li{
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.newsBox h6{
+  font-size: 30px;
+  text-align: left;
+}
+.newsBox p{
+  font-size: 18px;
+  text-align: right;
+}
+
+.siteMap{margin-left: 50px;}
+
+
+
+
+
+
+
+
+
+
